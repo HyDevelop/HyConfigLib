@@ -30,6 +30,8 @@ public abstract class Config extends YamlConfiguration
 
     private static final String RELATIVE_PATH_PREFIX = System.getProperty("os.name").toLowerCase().contains("win") ? ".\\" : "";
 
+    private boolean writeOnInit;
+
     /**
      * 新建一个Config
      * @param dir 路径
@@ -38,7 +40,7 @@ public abstract class Config extends YamlConfiguration
      * @param autoBackup 是否启用保存前自动备份
      * @param initialize 是否创建对象后直接加载
      */
-    public Config(String dir, String fileName, String fileExtension, boolean autoBackup, boolean initialize)
+    public Config(String dir, String fileName, String fileExtension, boolean autoBackup, boolean initialize, boolean writeOnInit)
     {
         super();
 
@@ -72,9 +74,12 @@ public abstract class Config extends YamlConfiguration
      */
     public void checkConfig()
     {
-        writeDefaultConfig();
-        save();
-        load();
+        if (writeOnInit)
+        {
+            writeDefaultConfig();
+            save();
+            load();
+        }
         readConfig();
     }
 
