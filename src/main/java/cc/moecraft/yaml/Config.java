@@ -56,6 +56,16 @@ public abstract class Config extends YamlConfiguration
         if (initialize) initialize();
     }
 
+    public Config(String dir, String fileName, String fileExtension, boolean autoBackup, boolean initialize)
+    {
+        this(dir, fileName, fileExtension, autoBackup, initialize, true);
+    }
+
+    public Config(String dir, String fileName, String fileExtension)
+    {
+        this(dir, fileName, fileExtension, false, true, true);
+    }
+
     /**
      * 初始化
      */
