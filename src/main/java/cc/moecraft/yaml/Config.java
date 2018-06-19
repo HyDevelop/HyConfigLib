@@ -1,11 +1,13 @@
 package cc.moecraft.yaml;
 
+import cc.moecraft.yaml.utils.FileUtils;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -64,6 +66,16 @@ public abstract class Config extends YamlConfiguration
     public Config(String dir, String fileName, String fileExtension)
     {
         this(dir, fileName, fileExtension, false, true, true);
+    }
+
+    /**
+     * 从resources导出
+     * @param resourceClass 带resources的类
+     * @throws IOException 复制错误
+     */
+    public void createFromResources(Class resourceClass) throws IOException
+    {
+        FileUtils.copy(new File(resourceClass.getResource(fileName + "." + fileExtension).getPath()), configFile);
     }
 
     /**
@@ -154,7 +166,7 @@ public abstract class Config extends YamlConfiguration
      * @param fileExtension 文件后缀
      * @return 配置文件
      */
-    public File getFileFromDir(String dir, String fileName, String fileExtension)
+    public static File getFileFromDir(String dir, String fileName, String fileExtension)
     {
         dir = dir == null || dir.equals("") ? "" : dir;
         return new File(RELATIVE_PATH_PREFIX + dir + File.separator + fileName + "." + fileExtension);
@@ -168,7 +180,7 @@ public abstract class Config extends YamlConfiguration
      * @param fileExtension 文件后缀
      * @return 备份文件(格式为 backup 路径 文件名at当前系统时间.文件后缀
      */
-    public File getBackupFileFromDir(String dir, String fileName, String fileExtension)
+    public static File getBackupFileFromDir(String dir, String fileName, String fileExtension)
     {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH_mm_ss");
         LocalDateTime now = LocalDateTime.now();

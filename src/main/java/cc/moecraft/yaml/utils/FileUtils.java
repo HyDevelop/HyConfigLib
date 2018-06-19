@@ -2,6 +2,7 @@ package cc.moecraft.yaml.utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 /**
  * 此类由 Hykilpikonna 在 2017/09/13 创建!
@@ -147,5 +148,10 @@ public class FileUtils
                 return null;
             }
         }
+    }
+
+    public static void copy(File source, File dest) throws IOException
+    {
+        Files.copy(source.toPath(), dest.toPath());
     }
 }
