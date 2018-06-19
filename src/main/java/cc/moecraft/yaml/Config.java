@@ -75,7 +75,7 @@ public abstract class Config extends YamlConfiguration
      */
     public void createFromResources(Class resourceClass) throws IOException
     {
-        FileUtils.copy(new File(resourceClass.getResource(fileName + "." + fileExtension).getPath()), configFile);
+        FileUtils.copy(new File(resourceClass.getResource(File.separator + fileName + "." + fileExtension).getPath()), configFile);
     }
 
     /**
