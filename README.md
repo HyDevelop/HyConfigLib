@@ -30,5 +30,5 @@ Bukkit的用法教程: https://www.spigotmc.org/wiki/creating-a-config-file/ <br
     <dependency>
         <groupId>com.github.hykilpikonna</groupId>
         <artifactId>HyConfigLib</artifactId>
-        <version>2.0.4-SNAPSHOT</version>
+        <version>2.0.5-SNAPSHOT</version>
     </dependency>

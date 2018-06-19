@@ -73,7 +73,7 @@ public abstract class Config extends YamlConfiguration
      * @param resourceClass 带resources的类
      * @throws IOException 复制错误
      */
-    public void createFromResources(Class resourceClass) throws IOException
+    public <T> void createFromResources(Class<T> resourceClass) throws IOException
     {
         FileUtils.copy(new File(resourceClass.getResource(File.separator + fileName + "." + fileExtension).getPath()), configFile);
     }
