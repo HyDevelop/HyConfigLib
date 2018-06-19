@@ -7,7 +7,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -75,7 +77,9 @@ public abstract class Config extends YamlConfiguration
      */
     public void createFromResources(Class resourceClass) throws IOException, NullPointerException
     {
-        FileUtils.copy(new File(resourceClass.getClassLoader().getResource(fileName + "." + fileExtension).getPath()), configFile);
+        InputStream resourceAsStream = resourceClass.getClassLoader().getResourceAsStream(fileName + "." + fileExtension);
+        Files.copy(resourceAsStream, Paths.get(configFile.getAbsolutePath()));
+        // FileUtils.copy(new File(resourceClass.getClassLoader().getResource(fileName + "." + fileExtension).getPath()), configFile);
     }
 
     /**
