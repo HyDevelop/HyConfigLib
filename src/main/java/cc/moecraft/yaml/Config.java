@@ -73,9 +73,9 @@ public abstract class Config extends YamlConfiguration
      * @param resourceClass 带resources的类
      * @throws IOException 复制错误
      */
-    public <T extends Class> void createFromResources(T resourceClass) throws IOException
+    public void createFromResources(Class resourceClass) throws IOException, NullPointerException
     {
-        FileUtils.copy(new File(resourceClass.getResource(File.separator + fileName + "." + fileExtension).getPath()), configFile);
+        FileUtils.copy(new File(resourceClass.getClassLoader().getResource(File.separator + fileName + "." + fileExtension).getPath()), configFile);
     }
 
     /**
