@@ -1,5 +1,6 @@
 package cc.moecraft.yaml;
 
+import lombok.Getter;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -30,10 +31,9 @@ public abstract class Config extends YamlConfiguration
     private String fileExtension;
 
     private boolean autoBackup;
+    private boolean writeOnInit;
 
     private static final String RELATIVE_PATH_PREFIX = System.getProperty("os.name").toLowerCase().contains("win") ? ".\\" : "";
-
-    private boolean writeOnInit;
 
     /**
      * 新建一个Config
@@ -53,6 +53,7 @@ public abstract class Config extends YamlConfiguration
         this.fileName = fileName;
         this.fileExtension = fileExtension;
         this.autoBackup = autoBackup;
+        this.writeOnInit = writeOnInit;
 
         this.configFile = getFileFromDir(dir, fileName, fileExtension);
 
