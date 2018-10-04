@@ -33,7 +33,7 @@ Tutorial on creating a Minecraft config: https://www.spigotmc.org/wiki/creating-
 Maven Import:
 --------
 
-没有添加 JitPack 的 Repo 的话首先添加 Repo,在 pom 里面把这些粘贴进去:
+Add the JitPack repo into your `pom.xml` first:
 
 ```xml
 <repositories>
@@ -44,7 +44,7 @@ Maven Import:
 </repositories>
 ```
 
-然后添加这个库:
+Then you can add this library as dependency:
 
 ```xml
 <dependency>
@@ -54,4 +54,4 @@ Maven Import:
 </dependency>
 ```
 
-然后ReImport之后就导入好了!
+Make sure you reimport if you're using IntelliJ IDEA!
