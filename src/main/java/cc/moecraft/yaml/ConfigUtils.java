@@ -60,4 +60,16 @@ public class ConfigUtils
     {
         if (debug) System.out.println("[HyConfig] " + msg);
     }
+
+    public static void safeSleep(long ms)
+    {
+        try
+        {
+            Thread.sleep(ms);
+        }
+        catch (InterruptedException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 }
