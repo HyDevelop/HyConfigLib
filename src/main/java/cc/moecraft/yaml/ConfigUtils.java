@@ -12,4 +12,6 @@ import java.io.File;
  */
 public class ConfigUtils
 {
+    public static boolean debug = false;
+
 }
