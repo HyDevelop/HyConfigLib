@@ -22,12 +22,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.HyDevelop</groupId>
-            <artifactId>HyCommonUtils</artifactId>
-            <version>1.1.0.4</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
