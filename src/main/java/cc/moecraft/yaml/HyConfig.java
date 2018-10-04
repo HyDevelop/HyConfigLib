@@ -69,6 +69,18 @@ public class HyConfig extends YamlConfiguration
     {
         this(configFile, true, false);
     }
+
+    /**
+     * Copy the config file out from jar resource.
+     *
+     * @param loader Class loader with resources in it.
+     * @throws IOException IO error.
+     */
+    public void createFromResources(ClassLoader loader) throws IOException
+    {
+        createFromResources(loader, configFile.getName());
+    }
+
     /**
      * Copy the config file out from jar resource.
      *
