@@ -106,6 +106,14 @@ public class HyConfig extends YamlConfiguration
     }
 
     /**
+     * Reload, just an alias for initialize.
+     */
+    public void reload()
+    {
+        initialize();
+    }
+
+    /**
      * Called after load
      */
     public void afterLoad() {}
