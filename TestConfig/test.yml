@@ -1,0 +1,7 @@
+Test:
+  TestString: StringValue1
+  TestInt: 2
+  TestDouble: 3.5
+  TestStringList:
+  - hi
+  - there
