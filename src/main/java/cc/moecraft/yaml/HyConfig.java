@@ -59,6 +59,17 @@ public class HyConfig extends YamlConfiguration
     }
 
     /**
+     * Construct a HyConfig object.
+     *
+     * @param configFile The config file path stored in a File object.
+     *                   The actual file in storage will be created when initializing if it
+     *                   does not exist.
+     */
+    public HyConfig(File configFile)
+    {
+        this(configFile, true, false);
+    }
+    /**
      * Copy the config file out from jar resource.
      *
      * @param loader Class loader with resources in it.
