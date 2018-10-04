@@ -1,4 +1,20 @@
-# HyConfigLib
+<h1 align="center">
+  <br>
+  <br>
+  HyConfigLib
+  <h4 align="center">
+  A simple YAML configuration library.
+  </h4>
+  <h5 align="center">
+<a href="#basics">Basic Info</a>&nbsp;&nbsp;
+<a href="#maven">Maven Import</a>&nbsp;&nbsp;
+<a href="#development">Development</a>&nbsp;&nbsp;
+<a href="#license">License</a>
+</h5>
+  <br>
+  <br>
+  <br>
+</h1>
 
 <a name="basics"></a>
 Basic Information:
