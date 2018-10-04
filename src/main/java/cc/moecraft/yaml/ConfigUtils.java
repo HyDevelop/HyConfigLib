@@ -14,4 +14,14 @@ public class ConfigUtils
 {
     public static boolean debug = false;
 
+
+    private static void error(String msg)
+    {
+        throw new RuntimeException("[HyConfig] " + msg);
+    }
+
+    public static void log(String msg)
+    {
+        if (debug) System.out.println("[HyConfig] " + msg);
+    }
 }
