@@ -2,6 +2,7 @@ package cc.moecraft.yaml;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -25,7 +26,7 @@ import static cc.moecraft.yaml.ConfigUtils.createFile;
  *
  * @author Hykilpikonna
  */
-@Getter @Setter
+@Getter @Setter @ToString
 public class HyConfig extends YamlConfiguration
 {
     private File configFile;
