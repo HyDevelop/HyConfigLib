@@ -21,6 +21,7 @@ import static cc.moecraft.yaml.ConfigUtils.createFile;
  * Twitter: @Hykilpikonna
  * QQ/Wechat: 871674895
  */
+@Deprecated
 public abstract class Config extends YamlConfiguration
 {
     private File configFile;
