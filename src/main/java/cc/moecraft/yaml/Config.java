@@ -1,6 +1,5 @@
 package cc.moecraft.yaml;
 
-import lombok.Getter;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -14,7 +13,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import static cc.moecraft.utils.FileUtils.createFile;
+import static cc.moecraft.yaml.ConfigUtils.createFile;
 
 /**
  * 此类由 Hykilpikonna 在 2017/07/25 创建!
