@@ -27,7 +27,7 @@ import static cc.moecraft.yaml.ConfigUtils.createFile;
  * @author Hykilpikonna
  */
 @Getter @Setter @ToString
-public class HyConfig extends YamlConfiguration
+public class HyConfig extends HyConfigBase
 {
     private File configFile;
     private File backupDir;
@@ -199,25 +199,5 @@ public class HyConfig extends YamlConfiguration
         {
             throw new RuntimeException("[HyConfig] Failed to read config with IO problems. " + configFile, e);
         }
-    }
-
-    /**
-     * Get keys in a path.
-     *
-     * Example:
-     *   KeyA:
-     *     SubKey1: "TestValue"
-     *     SubKey2: "TestValue2"
-     *   KeyB: "TestValue3"
-     *
-     *   getKeys("") will return ["KeyA", "KeyB"]
-     *   getKeys("KeyA") will return ["SubKey1", "SubKey2"]
-     *
-     * @param path Path of the parent key.
-     * @return Keys under the parent key.
-     */
-    public ArrayList<String> getKeys(String path)
-    {
-        return new ArrayList<>(getConfigurationSection(path).getKeys(false));
     }
 }
