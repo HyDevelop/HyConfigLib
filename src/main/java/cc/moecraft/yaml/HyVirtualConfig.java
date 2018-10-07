@@ -14,9 +14,16 @@ import java.io.File;
  */
 public class HyVirtualConfig extends HyConfigBase
 {
-    public HyVirtualConfig(String config) throws InvalidConfigurationException
+    public HyVirtualConfig(String config)
     {
-        super.loadFromString(config);
+        try
+        {
+            super.loadFromString(config);
+        }
+        catch (InvalidConfigurationException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override @Deprecated
