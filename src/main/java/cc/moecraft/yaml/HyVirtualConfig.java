@@ -19,6 +19,19 @@ public class HyVirtualConfig extends HyConfigBase
         super.loadFromString(config);
     }
 
+    @Override @Deprecated
+    public void load(File file)
+    {
+        throw new RuntimeException("Virtual config cannot load from file.");
+    }
+
+    @Override @Deprecated
+    public void load(String file)
+    {
+        throw new RuntimeException("Virtual config cannot load from file.");
+    }
+
+
     @Override
     public String toString()
     {
