@@ -115,3 +115,11 @@ config.save();
 // This will take up a lot of space because it creates a new backup every time save() is called.
 config.setBackupDir(new File("./backups/"));
 ```
+
+#### Virtual Config:
+
+This is a way to load config from a string without a file.
+
+```java
+HyVirtualConfig virtualConfig = new HyVirtualConfig(configInString);
+```
