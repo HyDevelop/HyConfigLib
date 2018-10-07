@@ -25,7 +25,7 @@ import static java.lang.System.in;
 public class ConfigExplorer
 {
     @NonNull
-    private HyConfig config;
+    private HyConfigBase config;
     private String currentPath = "";
 
     /**
@@ -37,7 +37,8 @@ public class ConfigExplorer
 
         while (true)
         {
-            System.out.print("[" + config.getConfigFile().getName() + " " + currentPath + "]:$ ");
+            System.out.print("[" + (config instanceof HyConfig ? ((HyConfig) config).getConfigFile().getName() : "Virtual Config")
+                    + " " + currentPath + "]:$ ");
             String input;
 
             try
