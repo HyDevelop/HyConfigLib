@@ -6,7 +6,7 @@
 
     <groupId>cc.moecraft.yaml</groupId>
     <artifactId>HyConfigLib</artifactId>
-    <version>3.0.38</version>
+    <version>3.1.52</version>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
