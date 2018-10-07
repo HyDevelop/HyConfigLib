@@ -50,7 +50,7 @@ Then you can add this library as dependency:
 <dependency>
     <groupId>com.github.hydevelop</groupId>
     <artifactId>HyConfigLib</artifactId>
-    <version>3.0.38</version>
+    <version>3.1.52</version>
 </dependency>
 ```
 
