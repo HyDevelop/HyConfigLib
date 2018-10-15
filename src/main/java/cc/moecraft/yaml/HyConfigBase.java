@@ -57,4 +57,14 @@ public abstract class HyConfigBase extends YamlConfiguration
     {
         return get(path) instanceof MemorySection;
     }
+
+    /**
+     * Remove entry in a path.
+     *
+     * @param path Path to an entry, or a dir.
+     */
+    public void remove(String path)
+    {
+        set(path, null);
+    }
 }
