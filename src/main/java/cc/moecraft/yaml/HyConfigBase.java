@@ -1,5 +1,6 @@
 package cc.moecraft.yaml;
 
+import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.util.ArrayList;
@@ -44,5 +45,16 @@ public abstract class HyConfigBase extends YamlConfiguration
         {
             return new ArrayList<>();
         }
+    }
+
+    /**
+     * Determine whether a path is a directory or not.
+     *
+     * @param path Path
+     * @return Is dir -> true, Not dir -> false
+     */
+    public boolean isDir(String path)
+    {
+        return get(path) instanceof MemorySection;
     }
 }
